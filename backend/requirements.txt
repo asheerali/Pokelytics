@@ -1,0 +1,8 @@
+uvicorn
+tqdm
+pandas
+numpy
+fastapi
+requests
+sqlalchemy
+pydantic

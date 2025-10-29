@@ -1,0 +1,2 @@
+python -m venv poke
+poke\Scripts\activate

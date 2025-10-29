@@ -1,0 +1,55 @@
+# docker for the frontend
+# ✅ Use a slimmer official Node.js image for Alpine-based builds
+FROM node:18-alpine
+
+# ✅ Set the working directory in the container
+WORKDIR /app
+
+# ✅ Add node_modules/.bin to PATH for using local binaries
+ENV PATH /app/node_modules/.bin:$PATH
+
+# ✅ Copy only the files needed for installing dependencies first (optimizes caching)
+COPY package.json ./
+COPY package-lock.json ./
+
+# ✅ Install dependencies silently
+RUN npm install --silent
+
+# ✅ Now copy everything else (so Docker rebuilds only if src changes)
+COPY . ./   
+VOLUME /app
+
+# ✅ Expose the port React dev server runs on
+EXPOSE 3000
+
+# ✅ Start the app using the npm script
+CMD ["npm", "start"]
+
+
+# # Use a modern Node.js version with Alpine
+# FROM node:18-alpine
+
+# # Set the working directory
+# WORKDIR /app
+
+# # Add node_modules/.bin to PATH
+# ENV PATH /app/node_modules/.bin:$PATH
+
+# # Disable ESLint during development (optional, for simpler setup)
+# ENV DISABLE_ESLINT_PLUGIN=true
+
+# # Copy package files
+# COPY package.json ./
+# COPY package-lock.json ./
+
+# # Install dependencies
+# RUN npm install --silent
+
+# # Copy the rest of the application
+# COPY . ./
+
+# # Expose port 3000
+# EXPOSE 3000
+
+# # Start the app
+# CMD ["npm", "start"]

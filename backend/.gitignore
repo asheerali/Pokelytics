@@ -1,0 +1,9 @@
+venv/
+.env
+__pycache__
+images/
+data_folder/
+logs/
+poke
+htmlcov/
+.pytest_cache/

@@ -149,17 +149,17 @@ The pipeline transforms nested JSON data from PokeAPI into a normalized relation
 
 - **FastAPI**: Chosen for its async capabilities, automatic API documentation, and type validation
 - **SQLAlchemy**: Provides ORM capabilities with support for multiple database backends
-- **PostgreSQL**: Robust relational database with excellent JSON support for future enhancements
+- **SQLite**: Robust relational database with excellent JSON support for future enhancements
 - **React**: Modern, component-based frontend framework for building interactive UIs
 - **Docker**: Ensures consistent environment across development and deployment
+- **Cloud Deployment (future improvements)**: AWS
 
 ## ✨ Features
 
 ### Core Features
-- ✅ Extracts data for 20+ Pokémon from PokeAPI
+- ✅ Extracts data for 10 Pokémon from PokeAPI
 - ✅ Transforms nested JSON into normalized relational structure
-- ✅ Stores data in PostgreSQL database
-- ✅ Comprehensive documentation
+- ✅ Stores data in SQL database
 
 ### Optional Features Implemented
 - ✅ **Clean, Pythonic Code**: Type hints, docstrings, and proper error handling
@@ -173,21 +173,17 @@ The pipeline transforms nested JSON data from PokeAPI into a normalized relation
 
 Given more time, the following enhancements would be valuable:
 
-1. **GraphQL API**: Implement a GraphQL endpoint for more flexible data querying
-2. **Advanced Relationships**: Add evolution chains and Pokémon form variations
-3. **Caching Layer**: Implement Redis caching for frequently accessed data
-4. **Incremental Updates**: Add functionality to update only changed Pokémon data
-5. **Background Jobs**: Use Celery for asynchronous pipeline execution
-6. **Authentication**: Add user authentication for personalized Pokémon collections
-7. **Advanced Filtering**: Enhanced search with filters for multiple types, stat ranges, etc.
-8. **Data Visualization**: Add charts and graphs for stat comparisons
-9. **CI/CD Pipeline**: Automated testing and deployment workflows
-10. **Monitoring**: Integrate application performance monitoring (e.g., Prometheus, Grafana)
+1. **Incremental Updates**: Add functionality to update only changed Pokémon data
+2. **Authentication**: Add user authentication for personalized Pokémon collections
+3. **Advanced Filtering**: Enhanced search with filters for multiple types, stat ranges, etc.
+4. **CI/CD Pipeline**: Automated testing and deployment workflows
+5. **Cloud Deployment**: If given one more hour can be deployed on the AWS
+6. **Monitoring**: Integrate application performance monitoring (e.g., Prometheus, Grafana)
 
 ## 🤝 Assumptions
 
 - The PokeAPI structure remains consistent (as per v2 specification)
-- Pokémon IDs 1-20 are fetched by default (configurable)
+- Pokémon IDs 1-10 are fetched by default (configurable)
 - Database credentials are managed via environment variables
 - The application runs in a development environment (production deployment would require additional security measures)
 

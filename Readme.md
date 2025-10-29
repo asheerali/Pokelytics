@@ -27,10 +27,10 @@ docker-compose up --build
 ```
 
 This single command will:
-- Build and start the PostgreSQL database
+- Build and start the SQLite database
 - Launch the FastAPI backend server (http://localhost:8000)
 - Start the React frontend application (http://localhost:3000)
-- Automatically run the data pipeline to fetch and store Pokémon data
+- And on the click of a button run the data pipeline to fetch and store Pokémon data
 
 **Access the application:**
 - Frontend: http://localhost:3000
@@ -73,15 +73,6 @@ npm start
 
 The frontend will be available at http://localhost:3000
 
-### Database Setup (Manual)
-
-If running manually, ensure you have PostgreSQL installed and create a database:
-```sql
-CREATE DATABASE pokemon_db;
-```
-
-Update the database connection string in your backend configuration file.
-
 ## 🧪 Running Tests
 
 To run the test suite:
@@ -122,7 +113,7 @@ pokemon-data-pipeline/
 │   ├── tests/
 │   │   ├── test_extract.py
 │   │   ├── test_transform.py
-│   │   └── test_load.py
+│   │   └── ......
 │   ├── requirements.txt
 │   └── requirements_test.txt
 ├── frontend/
@@ -133,8 +124,6 @@ pokemon-data-pipeline/
 │   ├── package.json
 │   └── public/
 ├── docker-compose.yml
-├── Dockerfile.backend
-├── Dockerfile.frontend
 └── README.md
 ```
 
